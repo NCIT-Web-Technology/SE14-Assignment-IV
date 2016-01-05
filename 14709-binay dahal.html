@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			temp = 0;
+			function changeStyle() 
+			{
+				x = document.getElementById("text");
+				if(temp == 0) 
+				{
+					x.style.color = 'red';
+					temp = 1;
+				}	
+				else
+				{
+					x.style.color = 'blue';
+					temp = 0;
+				}
+			}
+			function validateForm() 
+			{
+				var x = document.forms["myForm"]["fname"].value;
+				var y = document.forms["myForm"]["age"].value;
+				var z = document.forms["myForm"]["address"].value;
+    
+				if ((x == null || x == "") && (y == null || y == "") && (z == null || z == "")) 
+				{
+					alert("Name , Age and Address must be filled out");
+					return false;
+				}	
+				
+				else if ((x == null || x == "") && (y != null || y != "") && (z != null || z != ""))
+				{
+					alert("Name must be filled out");
+					return false;
+				}
+	
+				else if((x != null || x != "") && (y == null || y == "") && (z != null || z != ""))
+				{
+					alert("Age must be filled out");
+					return false;
+				}
+				
+				else if((x != null || x != "") && (y != null || y != "") && (z == null || z == ""))
+				{
+					alert("Address must be filled out");
+					return false;
+				}
+				
+				else if((x == null || x == "") && (y == null || y == "") && (z != null || z != ""))
+				{
+					alert("Name and Age must be filled out");
+					return false;
+				}
+				
+				else if((x != null || x != "") && (y == null || y == "") && (z == null || z == ""))
+				{
+					alert("Age and Address must be filled out");
+					return false;
+				}
+				
+				else if((x == null || x == "") && (y != null || y != "") && (z == null || z == ""))
+				{
+					alert("Name and Address must be filled out");
+					return false;
+				}
+				
+				else
+				{
+					alert("Your Name = "+x+" ,Your Age = "+y+"  Your Address = "+z);
+					return false;
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+	
+		<font color= blue><h1><p id="text">Javascript project</p></h1></font>
+		<button type="button" onclick="changeStyle()">Click here to change color of above text</button>
+		
+		<form name="myForm" action="" onsubmit="return validateForm()" method="post">
+			<h3>Form</h3>
+			<p>   Name: <input type="text" name="fname" value="" placeholder="Name"/></p>
+			<p>    Age: <input type="text" name="age" value="" placeholder="Age"/></p>
+			<p>Address: <input type="text" name="address" value="" placeholder="Address"/></p>
+	
+			<input type="submit" value="Submit">
+		</form>
+		
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form  example javascript</title>
+
+</head>
+<body>
+	<h1 id="header" style="color:blue; font-family:Arial">My Interactive Page</h1></br>
+	<button type="button" onclick="toggle()">Change Color</button></br>
+	<h2>My Form</h2>	
+	<form  action="" onsubmit="test()" method="post">
+		<p><label>Name:<input type="text" id="name" placeholder="Enter your name "/></label></p>
+		<p><label>Age:<input type="number" id="age" placeholder="Enter your age "/></label></p>
+		<p><label>Address:<input type="text" id="address" placeholder="Enter your address"/></label></p>
+	<input type="submit" value="Submit">
+	</form>
+<script>
+count=0;
+function toggle() 
+{
+	var m = document.getElementById("header");
+	if(count == 0) 
+	{
+        m.style.color = "red";
+	count= 1;
+	}
+else
+	{
+        m.style.color = "blue";
+	count = 0;
+	}
+    
+}
+
+function test() 
+{
+	var a=document.getElementById("name").value;
+        var b = document.getElementById("age").value;
+	var c = document.getElementById("address").value;
+    
+	if ((a == null || a== "") && (b == null || b == "")) 
+	{
+        alert("please enter both your name and age");
+	a.focus();
+	a.select();
+        return false;
+	}	
+       else if ((a == null || a == "") && (b != null || b != ""))
+	{
+        alert("Please fill the form completely name missing");
+	a.focus();
+	a.select();
+        return false;
+        }
+	
+	else if((a != null || a != "") && (b == null || b == ""))
+	{
+        alert("Please fill the form completely age missing");
+	b.focus();
+	b.select();
+        return false;
+        }
+	else
+	{
+	alert(" Your form has been submitted as\n " + " name= " + a + " age= " + b + " address= " +c);
+	return true;
+        }
+	
+}
+</script>
+
+</body>
+</html>

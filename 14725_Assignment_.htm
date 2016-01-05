@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title> Js Assignment</title>
+    
+  </head>
+  
+  <body>
+    <style>
+    fieldset
+            {
+            	border-radius : 20px;
+            	width:300px;
+            	padding:20px;
+            }
+    
+    </style>
+    
+    <h1 style="color: blue;" id="heading">My Interactive Page</h1>
+        <button id="change_color" onclick="change_color()">Change color</button>
+    <br /><br />
+    <fieldset>
+        <legend>MY form</legend>
+        <form id="form" >
+            <label>Name</label>
+            <input type="text" name="name" id="name"/><br/><br /><br />
+            <label>Age</label>
+            <input type="text" name="age" id="age"/><br /><br/><br />
+            <label> Address</label>
+            <input type="text" name=" Address" id="Address"/><br /><br/><br />
+            <button id="submit" onclick="valid()" >submit</button>
+        
+        </form>
+    
+    
+    
+    </fieldset>
+  
+  <script>
+  function valid()
+  {
+  var a = document.getElementById("name").value;
+  var b = document.getElementById("age").value;
+  if(a == "" && b=="")
+  {
+    alert("input field is blank please fill up them");
+  }
+  else
+  {
+    alert(" name: "+a+" age: "+b);
+  }
+  
+  }
+  function change_color()
+  {
+    document.getElementById("heading").style.color = "red";
+   
+  }
+  
+  </script>
+  
+  
+  </body>  

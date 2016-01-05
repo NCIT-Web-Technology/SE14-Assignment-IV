@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<title>Interactive Page Assignment 4</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<font color="blue"><h1 id="tex">My Interactive Page </h1></font>
+	<button onclick="changeColor()">Change Color</button>
+	<br>
+	<h3> My Form</h4>
+	<form name ="mForm" onsubmit="return validateForm()" method="post">
+  		First name:<br>
+  		<input type="text" name="Name" placeholder="Name">
+  		<br>
+  		Age:<br>
+  		<input type="number" name="Age" placeholder="Age">
+  		<br>
+  		Address:<br>
+  		<input type="text" name="Add" placeholder="Address">
+  		<br><br>
+  		<input type="submit" value="Submit">
+  		<br>
+	</form>
+
+<script>
+  colorst = 0;
+	function changeColor()
+ 	 	{
+      if(colorst==0)
+      {
+        document.getElementById("tex").style.color = "red";
+        colorst=1;
+      }
+      else
+      {
+        document.getElementById("tex").style.color = "blue";
+        colorst=0;
+      }
+		}
+
+	function validateForm()
+		{
+			var x = document.forms["mForm"]["Name"].value;
+			var y = document.forms["mForm"]["Age"].value;
+			var z = document.forms["mForm"]["Add"].value;
+    		if (x == null || x == "") 
+        {
+       		alert("Name must be filled out");
+        	return false;
+    		}	
+    		else if (y == null || y == "") 
+        {
+       		alert("Age must be filled out");
+        	return false;
+    		}
+    		else if (z == null || z == "") 
+        {
+       		alert("Address must be filled out");
+        	return false;
+    		}	
+			}
+</script>	
+</body>
+</html>

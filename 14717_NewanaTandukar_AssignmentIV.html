@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>My Interactive Page</title>
+	</head>
+	<style>
+		.container{
+			border: 1px solid #000;
+			margin: 2px;
+			height: 100%;
+			width: 512px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.boxes{
+			margin: 2px;
+			padding: 10px;
+			border: 1px solid #0A5BC4;
+			width: 300px;
+
+		}
+		#header{
+			color: #0000ff;
+			cursor: pointer;
+		}
+	</style>
+	<body>
+		<div class="container">
+			<h1 align="center" id="header" onclick="toggle(this)"><u><strong>My Interactive Page</strong></u></h1>
+			<br>
+			<h1>Please submit your credentials</h1>
+			<br>
+			<form name= "yaya">
+				<input type="text" name="Name" placeholder="Your Name*" class="boxes"><br>
+				<input type="number" name="Age" placeholder="Your Age*" class="boxes"><br>
+				<textarea rows="1"  name="Address" placeholder="Address" class="boxes"></textarea><br>
+				<input type="text" name="E-mail" placeholder="E-mail" class="boxes"><br>
+				<br>
+				<input type="button" value="SUBMIT" class="boxes" onclick="return(validate());">
+			</form>
+		</div>
+	<script>
+	var h1 = document.getElementById("header");
+	var state=false;
+		function toggle(h1){
+				if(state)
+				{
+					h1.style.color="#ff0000";
+					state=false;
+				}
+				else
+				{
+					h1.style.color="#0000ff";
+					state=true;
+				}
+		}
+			function validate(){
+				var N= document.yaya.Name.value;
+				var A= document.yaya.Age.value;
+				if(N=="" && A==""){
+					alert("Please enter the required credentials");
+					return(false);
+				}
+				else if(A==""){
+					alert("Please enter your age");
+					return(false);
+				}
+				else if(N==""){
+					alert("Please enter your name");
+					return(false);
+				} 
+				return(true);
+			}
+	</script>
+	</body>
+</html>

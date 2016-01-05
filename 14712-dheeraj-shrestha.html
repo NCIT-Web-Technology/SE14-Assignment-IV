@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS</title>
+<script>
+status = 1;
+function fn() 
+{
+	x = document.getElementById("text");
+	if(status == 1) 
+	{
+    x.style.color = 'red';
+	status = 2;
+	}
+else
+	{
+    x.style.color = 'blue';
+	status = 1;
+	}
+    
+}
+function test() 
+{
+    var x = document.forms["js"]["fname"].value;
+	var y = document.forms["js"]["age"].value;
+	var z = document.forms["js"]["address"].value;
+    
+	if ((x == null || x == "") && (y == null || y == "")) 
+	{
+        alert("Name and Age Needed");
+        return false;
+	}	
+    else if ((x == null || x == "") && (y != null || y != ""))
+	{
+        alert("Name Needed");
+        return false;
+    }
+	
+	else if((x != null || x != "") && (y == null || y == ""))
+	{
+        alert("Age Needed");
+        return false;
+    }
+	{
+		alert(" form submitted   name= "+x+"    age= "+y);
+		return false;
+    }
+	
+}
+</script>
+</head>
+<body>
+	<font color= blue><h1><p id="text">My Interactive Page</p></h1></font>
+	<button type="button" onclick="fn()">Change Color</button>
+	
+	<form name="js" action="" onsubmit="test()" method="post">
+	<font color=green><h2>My Form</h2></font>	
+		<p>Name:    <input type="text" name="fname" value="" placeholder="Full Name"/></p>
+		<p>Age:     <input type="number" name="age" value="" placeholder="Age"/></p>
+		<p>Address: <input type="text" name="address" value="" placeholder="Address"/></p>
+		
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

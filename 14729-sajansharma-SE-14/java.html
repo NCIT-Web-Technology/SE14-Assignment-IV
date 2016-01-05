@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> My Interactive Page</title>
+	<link rel="stylesheet" type="text/css" href="4.css">
+</head>
+<body>
+	<h1 id="colorchange" ><center>Javascript Examples</b></center></h1>
+
+	<input type="button" value="Change color"  onclick=" window.confirm('Do you really want to change the color?'),toogle(h)" >
+
+	<p>
+		<h2>
+			<i><b>My forms::</b></i>
+		</h2>
+	</p>
+	<p>
+		<h4>
+			Name:
+			<input type="text" name="name" value="" id="name" placeholder="Full Name"/>
+		</h4>
+				<h4>
+			Age:
+			<input type="number" name="age" value="" id="age" placeholder="age"/></p>
+		</h4>
+				<h4>
+			Address:
+			<input type="text" name="address" value="" placeholder="address"/></p>
+		</h4>
+		<input type="button" name="button2" value="Submit" id="submit" onclick="check()">
+	</p>
+
+
+	<script type="text/javascript">
+	var h=document.getElementById("colorchange");
+	var n=document.getElementById("name");
+	var a=document.getElementById("age");
+	flag= false;
+	function toogle(h)
+	{
+		
+		if (flag ==false) 
+		{
+			h.style.color ="#ff0000";
+			flag = true;
+		}
+		else
+		{
+			h.style.color ="#0000ff";
+			flag = false;
+		}
+	}
+	function check()
+	{
+		if (n.value.length==0 && a.value.length==0)
+		{
+			
+			alert("Both name and Age are compulsary to fill");
+			
+		}
+		else if(n.value.length==0)
+		{
+			alert(" Enter your Name Please");
+		}
+		else if (a.value.length==0)
+		{
+			alert("Enter your Age Please");
+		}
+		else
+		{
+			window.confirm("Is all the data you provided are correct?");
+
+		}
+	}
+
+
+	</script>
+
+
+</body>
+</html>

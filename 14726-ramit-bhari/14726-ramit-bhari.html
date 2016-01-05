@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+status = 0;
+function changeStyle() 
+{
+	x = document.getElementById("text");
+
+	if(status == 0) 
+	{
+    x.style.color = 'red';
+	status = 1;
+	}
+else
+	{
+    x.style.color = 'blue';
+	status = 0;
+	}
+    
+
+}
+function validateForm() 
+{
+    var x = document.forms["myForm"]["fname"].value;
+	var y = document.forms["myForm"]["age"].value;
+	var z = document.forms["myForm"]["address"].value;
+    
+	if ((x == null || x == "") && (y == null || y == "")) 
+	{
+        alert("Name and Age must be filled out");
+        return false;
+	}	
+    else if ((x == null || x == "") && (y != null || y != ""))
+	{
+        alert("Name must be filled out");
+        return false;
+    }
+	
+	else if((x != null || x != "") && (y == null || y == ""))
+	{
+        alert("Age must be filled out");
+        return false;
+    }
+	{
+		alert(" Name = "+x+"  Age = "+y+"  Address = "+z);
+		return false;
+    }
+
+	
+}
+</script>
+</head>
+<body>
+	<font color= blue><h1><p id="text">My Interactive Page</p></h1></font>
+	<button type="button" onclick="changeStyle()">Click me</button>
+	<form name="myForm" action="" onsubmit="return validateForm()" method="post">
+	<h3>My Form</h3>
+		<p>Name:    <input type="text" name="fname" value="" placeholder="Full Name"/></p>
+		<p>Age:     <input type="text" name="age" value="" placeholder="Age"/></p>
+		<p>Address: <input type="text" name="address" value="" placeholder="Address"/></p>
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>my first javascript</title>
+		
+	</head>
+	<body>
+		<h1 id="heading" style="color:blue" >MY INTERACTIVEPAGE</h1>
+		<button id="btn1" onClick="ChangeColor()">
+			Change Color
+		</button>
+		
+		<br/>
+		<br/>
+		MY form
+		<br/>
+		<br/>
+		<form >
+			Name:<input type="text" method="POST" action="" id="formname">
+			<br/>
+			<br/>
+			Age:<input type="numerical" method="POST" action="" id="age">
+			<br/>
+			<br/>
+			Adress:<input type="text" method="POST" action="" id="address">
+			<br/>
+			<br/>
+		
+		
+		</form>
+		<button id="submit" onClick ="Sub()">Submit</button>
+		<script>
+			var currentColor = 'blue';
+			function ChangeColor()
+			{
+				if(currentColor == 'blue')
+				{
+					document.getElementById('heading').style.color = 'red';
+					currentColor = 'red';
+				}
+				
+				else
+				{
+					document.getElementById('heading').style.color = 'blue';
+					currentColor = 'blue';
+				}
+				
+			}
+			
+			function Sub()
+			{
+				
+				var age=document.getElementById('age').value;
+				var formname=document.getElementById('formname').value;
+				
+				if(formname==""| age=="")
+				{
+					
+					
+					alert("submit your formname and age");
+				}
+				else
+				{
+					alert("yor form has been submitted sucessfully");
+				}
+			
+			}
+		</script>
+		
+	
+	
+	</body>
+
+
+
+</html>

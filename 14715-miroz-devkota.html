@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript</title>
+</head>
+<body>
+	<font color="blue" size="4"><h1><p id="text">&nbsp; &nbsp; My Interactive Page</p></h1></font>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" onclick="toggle()">Change Color</button>
+	<br><br>
+	<form name="java" action="" onsubmit="check()" method="post">
+	<font color=hotpink><h2>My Form</h2></font>	
+		<p>Name:    <input type="text" name="fname" value="" placeholder="Full Name"/></p>
+		<p>Age :     <input type="number" name="age" value="" placeholder="Age"/></p>
+		<p>Address: <input type="text" name="address" value="" placeholder="Address"/></p>
+		<br>
+	
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Submit">
+</form>
+
+<script>
+status = 0;
+function toggle() 
+{
+	x = document.getElementById("text");
+	if(status == 0) 
+	{
+    x.style.color = 'red';
+	status = 1;
+	}
+else
+	{
+    x.style.color = 'blue';
+	status = 0;
+	}
+    
+}
+function check() 
+{
+    var x = document.forms["java"]["fname"].value;
+	var y = document.forms["java"]["age"].value;
+	var z = document.forms["java"]["address"].value;
+    
+	if ((x == null || x == "") && (y == null || y == "")) 
+	{
+        alert("Name and Age must be filled out");
+        return false;
+	}	
+    else if ((x == null || x == "") && (y != null || y != ""))
+	{
+        alert("Name must be filled out");
+        return false;
+    }
+	
+	else if((x != null || x != "") && (y == null || y == ""))
+	{
+        alert("Age must be filled out");
+        return false;
+    }
+	{
+		alert(" form submitted   name= "+x+"    age= "+y);
+		return false;
+    }
+	
+}
+</script>
+</body>
+</html>
